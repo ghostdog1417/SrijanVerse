@@ -1,103 +1,279 @@
-# SrijanVerse
+# 🎵 SrijanVerse
 
-SrijanVerse is a Spotify-inspired music and poetry web app for showcasing original songs and poems by Srijan Dwivedi.
+A modern, feature-rich streaming app for exploring original songs and poetry by **Srijan Dwivedi**. Built with React and powered by Web Audio API, SrijanVerse delivers a Spotify-inspired experience with advanced playback controls, mood-based discovery, and offline support.
 
-It combines a modern streaming-style player, artist and album pages, playlist management, listening analytics, and a personal song diary in one single-page React app.
+**Live Demo:** [SrijanVerse on Vercel](https://srijanverse.vercel.app)
 
-## Table of Contents
+---
 
-- Overview
-- Tech Stack
-- Complete Feature List
-- Navigation Tabs
-- Player and Audio Features
-- Data Persistence
-- PWA and Offline Behavior
-- Song and Poem Content Format
-- Installation and Local Development
-- Build, Preview, and Lint
-- Deployment
-- Project Structure
+## 🎯 What's Inside?
 
-## Overview
+- **25+ Original Songs** in English and Hindi/Hindustani
+- **Full Player** with equalizer, visualizer, crossfade, and gapless playback
+- **Smart Discovery** by mood, artist, album, and listening habits
+- **Playlist Management** with custom and auto-generated collections
+- **Song Diary** to track personal notes and feelings tied to tracks
+- **Poetry Reading** with full-screen immersive mode
+- **Offline Access** via PWA and service worker caching
+- **Dark/Light Theme** with dynamic color gradients
+- **Mobile Responsive** design with touch-friendly controls
 
-SrijanVerse includes:
+---
 
-- Music browsing by songs, artists, albums, mood, and custom filters.
-- A full playback queue system with reordering and direct jump controls.
-- A dedicated full player page with synced lyrics, equalizer, visualizer, and playback settings.
-- Playlist creation and management, including smart auto-generated playlist sections.
-- A personal diary for attaching notes and moods to songs.
-- Poetry browsing with full-screen reading mode.
-- PWA install support and service worker caching.
+## 🛠️ Tech Stack
 
-## Tech Stack
+| Layer | Technology |
+|-------|-----------|
+| **Frontend** | React 19, Vite 8 |
+| **Styling** | Tailwind CSS 3, PostCSS, Autoprefixer |
+| **Icons** | Lucide React |
+| **Audio** | HTML5 `<audio>` + Web Audio API |
+| **Metadata** | jsmediatags (browser bundle) |
+| **Storage** | localStorage (client-side persistence) |
+| **PWA** | Service Worker, Web App Manifest |
+| **Deployment** | Vercel (SPA rewrites + build optimization) |
 
-- React 19 + Vite 8
-- Tailwind CSS 3 + PostCSS + Autoprefixer
-- Lucide React icons
-- HTML5 Audio element + Web Audio API (equalizer + analyser visualizer)
-- LocalStorage for persistent client-side state
-- Service Worker + Web App Manifest for PWA behavior
+---
 
-## Complete Feature List
+## ✨ Core Features
 
-### Core app experience
+### 🏠 Home Dashboard
+- Quick stats: liked songs count, artist count, current queue
+- Recently played tracks
+- Smart recommendations based on artist/album and liked songs
+- Mood-based auto-generated playlists:
+  - **Late Night** — melancholic, introspective
+  - **Romance** — love, longing, emotion
+  - **Focus** — calm, contemplative
+  - **Unwind** — relaxing, peaceful
 
-- Spotify-like layout with sidebar + content area + sticky bottom player.
-- Mobile responsive navigation with hamburger toggle and overlay drawer.
-- Dark and light theme toggle with custom color tokens.
-- Dynamic gradient accents generated from artist and album names.
+### 🎶 Songs Library
+- Browse all tracks with metadata extracted from MP3 tags
+- **Search** by title, artist, or album
+- **Filters:** favorites, artist, album, mood
+- **Sort Options:** A-Z, Z-A, recently played, most played, artist
+- **View Modes:** flat list or group-by-album
+- **Quick Actions:** play, like/unlike, add to queue, jump to artist/album
 
-### Song discovery and browsing
+### 👤 Artist Pages
+- Grid view of all artists with dynamic styling
+- Persistent artist list for quick navigation
+- Artist spotlight with metadata
+- One-click "Play Artist" to queue full discography
+- Per-artist browsing and filtering
 
-- Home dashboard cards for liked songs, artists, queue count, and quick actions.
-- Recently played section.
-- Recommended tracks section based on current song artist/album and liked songs.
-- Mood playlists auto-grouped by inferred moods:
-  - Late Night
-  - Romance
-  - Focus
-  - Unwind
+### 💿 Album Pages
+- Grid view of all albums with visual styling
+- Album list panel with quick selection
+- Album spotlight (title, artist, track count)
+- One-click "Play Album" functionality
+- Complete album playback
 
-### Songs tab features
+### ▶️ Advanced Player
+- **Full Player Page** with large artwork, song info, and controls
+- **Queue System** with reordering, jump-to, and skip controls
+- **Playback Settings:**
+  - Visualizer (animated frequency analyser)
+  - 10-band Equalizer with presets
+  - Crossfade between tracks (0-5 seconds)
+  - Gapless playback mode
+  - Auto-play similar tracks
+- **Synced Playback** across all UI states
+- **Persistent Playback** state across sessions
 
-- Full songs list rendering from MP3 metadata tags.
-- Search across title, artist, and album.
-- Favorites-only filter.
-- Artist filter.
-- Album filter.
-- Mood filter.
-- Sort options:
-  - Default
-  - Title A-Z
-  - Title Z-A
-  - Artist A-Z
-  - Recently played first
-  - Most played first
-- Optional group-by-album view.
-- Per-song quick actions:
-  - Play
-  - Like/unlike
-  - Add to queue
-  - Jump to artist page
-  - Jump to album page
+### 📖 Poetry Section
+- Browse all poems (`.txt` files from `/src/poems/`)
+- Full-screen reading mode
+- Clean typography for immersive reading
 
-### Artist pages
+### 📔 Song Diary
+- Attach personal notes to any song
+- Record mood and date listened
+- Filter and search diary entries
+- Perfect for tracking emotional connections to music
 
-- Artist card grid with dynamic visual styling.
-- Artist list panel for quick selection.
-- Artist spotlight area with metadata.
-- One-click "Play Artist" queue generation.
-- Full artist discography playback.
+### 🎨 UI/UX
+- **Dark & Light Modes** with theme persistence
+- **Dynamic Gradients** generated from artist/album metadata
+- **Responsive Layout:** sidebar + content area + sticky player
+- **Mobile Navigation** with hamburger toggle and overlay drawer
+- **Smooth Transitions** and animations
 
-### Album pages
+---
 
-- Album card grid with dynamic visual styling.
-- Album list panel for quick selection.
-- Album spotlight area with artist + track count.
-- One-click "Play Album" queue generation.
-- Full album track playback.
+## 🌌 SrijanVerse Design Kit
+
+The repo now includes a dedicated design kit for the cinematic UI direction:
+- [Design system summary](design/system.md)
+- [Mobile screen specs](design/screens.md)
+- [Desktop layout specs](design/desktop.md)
+- [Component catalog](design/components.md)
+- [Motion guide](design/motion.md)
+- [Packaging notes](design/next-steps.md)
+
+Prototype pages are available under `design/prototypes/` for quick visual review:
+- Mobile: `design/prototypes/mobile/`
+- Desktop: `design/prototypes/desktop/`
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js 16+ and npm
+
+### Installation
+
+```bash
+# Clone the repository
+git clone <repository-url>
+cd SrijanVerse
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+```
+
+Visit `http://localhost:5173` in your browser.
+
+### Build for Production
+
+```bash
+# Build optimized bundle
+npm run build
+
+# Preview production build
+npm run preview
+```
+
+### Linting
+
+```bash
+# Check code quality
+npm run lint
+```
+
+---
+
+## 📁 Project Structure
+
+```
+SrijanVerse/
+├── src/
+│   ├── components/          # React components
+│   │   ├── Player.jsx       # Main player component
+│   │   ├── Sidebar.jsx      # Navigation sidebar
+│   │   ├── SongCard.jsx     # Song card UI
+│   │   └── PoetryCard.jsx   # Poetry card UI
+│   ├── data/
+│   │   ├── songs.js         # Song data and metadata
+│   │   └── poems.js         # Poem data
+│   ├── poems/               # Poem text files (.txt)
+│   ├── songs/               # MP3 audio files
+│   ├── App.jsx              # Root component
+│   ├── App.css              # App styles
+│   ├── main.jsx             # React DOM render
+│   ├── index.css            # Global styles
+│   └── assets/
+│       └── manifest.webmanifest
+├── vite.config.js           # Vite configuration
+├── tailwind.config.js       # Tailwind setup
+├── postcss.config.js        # PostCSS config
+├── eslint.config.js         # ESLint rules
+├── vercel.json              # Vercel deployment config
+├── package.json
+└── README.md
+```
+
+---
+
+## 🎵 Adding Songs and Poems
+
+### Songs
+
+1. Place MP3 files in `src/songs/`
+2. Update `src/data/songs.js` with metadata:
+
+   ```javascript
+   {
+     id: unique_id,
+     title: "Song Title",
+     artist: "Artist Name",
+     album: "Album Name",
+     mood: "late-night",
+     file: "Songs/filename.mp3"
+   }
+   ```
+
+### Poems
+1. Create `.txt` files in `src/poems/`
+2. Update `src/data/poems.js` with entries:
+   ```javascript
+   {
+     id: unique_id,
+     title: "Poem Title",
+     filename: "Poem Title.txt"
+   }
+   ```
+
+---
+
+## 💾 Data Persistence
+
+All user data is stored in browser localStorage:
+- **Liked songs** and favorites
+- **Playlists** (custom collections)
+- **Recently played** history
+- **Theme preference** (dark/light)
+- **Equalizer presets**
+- **Song diary** entries (notes + moods)
+- **Play statistics** and listening habits
+- **Player settings** (visualizer, crossfade, gapless)
+
+Data persists across sessions and works offline.
+
+---
+
+## 🌐 PWA & Offline Support
+
+SrijanVerse is a Progressive Web App:
+- **Install** on home screen (mobile & desktop)
+- **Offline Access** via service worker caching
+- **App Manifest** with icons and metadata
+- **Standalone Mode** works like native app
+
+---
+
+## 🚀 Deployment
+
+Deployed on **Vercel** with optimizations:
+- SPA rewrites for client-side routing
+- Explicit build command: `npm run build`
+- Output directory: `dist`
+- Automatic CI/CD from git
+
+⚠️ **Note:** Browser bundle must be used for `jsmediatags`:
+```javascript
+import jsmediatags from 'jsmediatags/dist/jsmediatags.min.js'
+```
+
+---
+
+## 📄 License
+
+Personal project by Srijan Dwivedi. All original music and poetry © Srijan Dwivedi.
+
+---
+
+## 🤝 Contributing
+
+This is a personal creative project. For feedback or ideas, feel free to open an issue.
+
+---
+
+**Made with ❤️ by Srijan Dwivedi**
 
 ### Queue management
 
